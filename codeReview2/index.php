@@ -28,4 +28,24 @@ do {
     echo "<p> esse texto sempre aparecerá, mesmo que a condição seja falsa </p>";
     $valor++;
 } while ($valor < 5);
+
+$tarefas = [ //array de arrays, cada tarefa é um array associativo
+    ['descricao' => 'Estudar PHP', 'concluida' => true],
+    ['descricao' => 'Cagar na roupa', 'concluida' => true],
+    ['descricao' => 'Fazer almoço', 'concluida' => false],
+];
+
+echo $tarefas[1]['descricao'];
+
+echo "<ul>";
+foreach ($tarefas as $tarefa) { // para cada tarefa dentro do array tarefas
+    $classeCSS = $tarefa['concluida'] ? 'color: green; text-decoration: line-through;' : 'color: red;'; //alteração CSS do texto dependendo se a tarefa foi concluída ou não 
+    $statusTexto = $tarefa['concluida'] ? '[concluida]' : '[pendente]';
+
+    echo "<li style='$classeCSS'>" . $tarefa['descricao'] .  "" . $statusTexto . "</li>";
+}
+
+echo "</ul>";
+
+
 ?>
