@@ -3,18 +3,18 @@
 $mensagem = 'Olá, Mundo!';
 echo "<p> $mensagem </p>";
 
-// Variaveis Padrão
-$primero_nome = 'Ícaro';    // string
+// Variaveis Padrão  $ -> declaração de variáveis
+$primero_nome = 'Ícaro';    // string 
 $idade = 23;                // interger
 $gosta_de_bolo = true;      // boolean
 $altura = 1.96;             // float
 
-$frutas = array('banana', 'maca', 'tomare');
+$frutas = array('banana', 'maca', 'tomare'); // array -> vetor(lista de valores)
 $numeros = array(3,6,8,10);
 $numeros_frutados = array(3,'morango',true,1.93);
 
 //Definindo Consantes
-define('PI', 3.14159);
+define('PI', 3.14159); 
 const SITE_NOME = 'Meu Site';
 
 $variavel_nula = null;
@@ -46,7 +46,7 @@ for($i=1;$i <= 5; $i++){
     echo "<p> Contagem: $i </p>";
 }
 
-function saudacao($nome){
+function saudacao($nome){ // declaração de função
     return "Olá $nome";
 }
 
