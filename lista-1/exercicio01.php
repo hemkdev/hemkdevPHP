@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício 01 - Par ou Ímpar</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -16,8 +17,9 @@
 
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if (isset( $_POST['verificar_par_impar'])) {
-            $numero = filter_var( $_POST['numero'], FILTER_VALIDATE_INT);
+        if (isset($_POST['verificar_par_impar'])) {
+            $numero = filter_var($_POST['numero'], FILTER_VALIDATE_INT);
+            echo '<div class="resultado">';
             if ($numero === false) {
                 echo "Número inválido!";
             } else {
@@ -27,6 +29,7 @@
                     echo "O número $numero é <strong>ímpar</strong>.";
                 }
             }
+            echo '</div>';
         }
     }
     ?>
