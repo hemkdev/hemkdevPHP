@@ -31,7 +31,7 @@
                 return $soma;
             }
 
-            if ($numero === false) {
+            if ($numero === false) {0
                 echo 'Número inválido!';
             } else {
                 $soma = soma_divisores($numero);
