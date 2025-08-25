@@ -18,20 +18,25 @@
 
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if (isset($_POST['verificar_divisores'])) {
-            $numero = filter_var($_POST['numero'], FILTER_VALIDATE_INT);
-            echo '<div class="resultado">';
-            if ($numero === false) {
-                echo "Número inválido!";
-            } else {
-                for ($i = 1; $i >= $numero; $i++) {
-                    if ($numero % $i == 0) {
-                        echo "$i";
-                    }
+
+        $numero = isset($_POST['numero']) ? (int)$_POST['numero'] : 0;
+        echo '<div class="resultado">';
+
+        function verificar_divisores($numero)
+        {
+            $divisores = [];
+            for ($i = 1; $i <= $numero; $i++) {
+                if ($numero % $i == 0) {
+                    $divisores[] = $i;
                 }
             }
-            echo '</div>';
+            return $divisores;
         }
+        
+        $divisores = verificar_divisores($numero);
+        echo "Os divisores de $numero são: " . implode(', ', $divisores);
+        echo '</div>';
+
     }
     ?>
 

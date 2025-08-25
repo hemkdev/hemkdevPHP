@@ -20,6 +20,7 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['calcular_tabuada'])) {
             $numero = filter_var($_POST['numero'], FILTER_VALIDATE_INT);
+            
             echo '<div class="resultado">';
             if ($numero === false) {
                 echo "Número inválido!";
