@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <h1> Exercício 01 - Par ou Ímpar </h1>
     <form method="POST" action="">
         <label for="numero">Digite um número:</label>
         <input type="number" id="numero" name="numero" required>

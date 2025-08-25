@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <h1> Exercício 02 - Cálculo de tabuada </h1>
     <form method="POST" action="">
         <label for="numero">Digite um número:</label>
         <input type="number" id="numero" name="numero" required>

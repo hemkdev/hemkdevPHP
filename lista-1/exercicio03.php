@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1> Exercício 03 - Números positivos, negativos e zero </h1>
     <form method="POST" action="">
         <label for="numero">Digite um número:</label>
         <input type="number" id="numero" name="numero" required>
         <button type="submit" name="verificar_numero">Verificar</button>
     </form>
-</body>
+
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['verificar_numero'])) {
@@ -34,5 +35,7 @@
             echo '</div>';
         }
     }
-    ?> 
+    ?>
+</body> 
+
 </html>
