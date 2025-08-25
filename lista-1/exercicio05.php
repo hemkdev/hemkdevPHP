@@ -20,33 +20,33 @@
 
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if (isset($_POST['numero_amigo'])) {
-            $num1 = filter_var($_POST['num1'], FILTER_VALIDATE_INT);
-            $num2 = filter_var($_POST['num2'], FILTER_VALIDATE_INT);
+        
+        $num1 = isset($_POST['num1']) ? (int)$_POST['num1'] : 0;
+        $num2 = isset($_POST['num2']) ? (int)$_POST['num2'] : 0;
+        echo '<div class="resultado">';
 
-            function soma_dos_divisores($n)
-            {
-                $soma = 0;
-                for ($i = 1; $i <= $n / 2; $i++) {
-                    if ($n % $i == 0) {
-                        $soma += $i;
-                    }
+        function soma_divisor($n)
+        {
+            $soma = 0;
+            for ($i = 1; $i <= $n; $i++) {
+                if ($n % $i == 0) {
+                    $soma += $i;
                 }
-                return $soma;
             }
+            return $soma;
+        }
 
-            echo '<div class="resultado">';
-            if ($num1 === false || $num2 === false) {
-                echo "Número inválido!";
+        echo '<div class="resultado">';
+        if ($num1 === false || $num2 === false){
+            echo 'Número inválido!';
+        } else {
+            $soma1 = soma_divisor($num1) - $num1; // Subtrai o próprio número para obter a soma dos divisores próprios
+            $soma2 = soma_divisor($num2) - $num2; // Subtrai o próprio número para obter a soma dos divisores próprios
+
+            if ($soma1 === $num2 && $soma2 === $num1) {
+                echo "Os números $num1 e $num2 são números amigos.";
             } else {
-                $soma1 = soma_dos_divisores($num1);
-                $soma2 = soma_dos_divisores($num2);
-
-                if ($soma1 == $num2 && $soma2 == $num1) {
-                    echo "$num1 e $num2 são números amigos.";
-                } else {
-                    echo "$num1 e $num2 não são números amigos.";
-                }
+                echo "Os números $num1 e $num2 não são números amigos.";
             }
             echo '</div>';
         }
