@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <h1> Exercício 05 - Números amigos </h1>
+    <form method="POST" action="">
+        <label for="nome">Digite seu nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="peso">Digite seu peso:</label>
+        <input type="number" id="peso" name="peso" required>
+        <button type="submit" name="calcular_imc">Verificar</button>
+    </form>
+
 </body>
 </html>
