@@ -36,7 +36,6 @@
             return $soma;
         }
 
-        echo '<div class="resultado">';
         if ($num1 === false || $num2 === false){
             echo 'Número inválido!';
         } else {
