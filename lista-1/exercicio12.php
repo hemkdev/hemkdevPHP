@@ -21,7 +21,7 @@
         echo '<div class="resultado">';
 
             function contar_vogais($texto) {
-                return preg_match_all('/[aeiouAEIOU]/', $texto);
+                return preg_match_all('/[aeiouAEIOU]/', $texto); // retorna a quantidade de vogais na string, sem diferenciar maiusculas e minusculas
             }
 
             $total_vogais = contar_vogais($texto);

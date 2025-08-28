@@ -23,7 +23,7 @@
         echo '<div class="resultado">';
 
         function verificar_data($dia, $mes, $ano) {
-            if (checkdate($mes, $dia, $ano)) {
+            if (checkdate($mes, $dia, $ano)) { // verifica a data baseada na função nativa do php
                 return $resultado = "A data $dia/$mes/$ano é válida";
             } else {
                 return $resultado = "A data $dia/$mes/$ano não é válida";

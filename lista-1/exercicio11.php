@@ -17,11 +17,11 @@
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $texto = isset($_POST['texto']) ? trim($_POST['texto']) : '';
-        $textoInvertido = strrev($texto);
+        $textoInvertido = strrev($texto); //inverte a string
         echo '<div class="resultado">';
 
         function verificar_palindromo($texto, $textoInvertido) {
-            if (strcasecmp($texto, $textoInvertido) === 0) {
+            if (strcasecmp($texto, $textoInvertido) === 0) { //verifica sem considerar maiúsculas e minúsculas
             return true;
         } else 
             return false;
